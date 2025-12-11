@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GameTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-12-11T01:01:03.629Z" hostname="Calvins-MacBook-Air-2.local" time="0.012">
+  <properties/>
+  <testcase name="testSetRoundCount()" classname="GameTest" time="0.005"/>
+  <testcase name="testGetShotgun()" classname="GameTest" time="0.001"/>
+  <testcase name="testIncrementRoundCount()" classname="GameTest" time="0.0"/>
+  <testcase name="testResetRoundCount()" classname="GameTest" time="0.0"/>
+  <testcase name="testGetRoundCount()" classname="GameTest" time="0.0"/>
+  <testcase name="testConstructor()" classname="GameTest" time="0.0"/>
+  <testcase name="testNewRound()" classname="GameTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
