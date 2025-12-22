@@ -89,4 +89,29 @@ public class ItemTest {
         beer.useItem(user, target, shotgun);
         beer.useItem(user, target, shotgun);
     }
+
+    @Test
+    public void testHandSaw(){
+        Item handSaw = new HandSaw();
+        assert(handSaw.getName().equals("Hand Saw"));
+        assertNotNull(handSaw);
+
+        assert(shotgun.getSawedOff() == false);
+        handSaw.useItem(user, target, shotgun);
+
+        assert(shotgun.getSawedOff() == true);
+    }
+
+    @Test
+    public void testHandcuffs(){
+        Item handcuffs = new Handcuffs();
+        assertNotNull(handcuffs);
+        assert(handcuffs.getName().equals("Handcuffs"));
+
+        assert(target.getHandcuffed() == 0);
+
+        handcuffs.useItem(user, target, shotgun);
+
+        assert(target.getHandcuffed() == 1);
+    }
 }
