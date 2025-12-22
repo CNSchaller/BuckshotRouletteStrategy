@@ -9,6 +9,7 @@ public class Shotgun {
     private int liveShells;
     private int blankShells;
     private int amountLoaded;
+    private boolean sawedOff = false;
 
     public Shotgun(Random random) {
         this.random = random;
@@ -32,6 +33,10 @@ public class Shotgun {
 
     public List<Boolean> getLoaded(){
         return loaded;
+    }
+
+    public boolean getSawedOff() {
+        return sawedOff;
     }
 
     public void setLiveShells(int liveShells) {
@@ -73,12 +78,26 @@ public class Shotgun {
         }
     }
 
+    public void sawOff(){
+        this.sawedOff = true;
+    }
+
     public Boolean shoot(){
+        this.sawedOff = false;
         if(getLoaded().size() > 0) {
             Boolean shot = getLoaded().get(0);
             getLoaded().remove(0);
             return shot;
         }
         else return null;
+    }
+
+    public void printLoaded(){
+        System.out.println("Amount Loaded:  " + amountLoaded);
+        System.out.println("Live Shells:  " + liveShells);
+        System.out.println("Blank Shells:  " + blankShells);
+        for(int i = 0; i < this.amountLoaded; i++){
+            System.out.println("Shell " + i + ": " + loaded.get(i));
+        }
     }
 }

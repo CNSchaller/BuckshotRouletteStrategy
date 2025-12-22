@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ItemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-12-22T05:26:17.482Z" hostname="Calvins-MacBook-Air-2.local" time="0.008">
+  <properties/>
+  <testcase name="testPhone()" classname="ItemTest" time="0.008"/>
+  <system-out><![CDATA[Amount Loaded:  5
+Live Shells:  1
+Blank Shells:  4
+Shell 0: false
+Shell 1: false
+Shell 2: true
+Shell 3: false
+Shell 4: false
+4 shell is blank.
+3 shell is blank.
+1 shell is live.
+1 shell is blank.
+1 shell is blank.
+No shells in gun.
+No shells in gun.
+No shells in gun.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

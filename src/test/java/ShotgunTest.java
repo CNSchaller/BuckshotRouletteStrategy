@@ -90,4 +90,26 @@ public class ShotgunTest {
         assert(shotgun.getLoaded().size() == 0);
        // assert(shotgun.shoot() == null);
     }
+
+    @Test
+    public void testPrint(){
+        Shotgun shotgun = new Shotgun(new Random());
+        shotgun.loadShotgun();
+
+        shotgun.printLoaded();
+    }
+
+    @Test
+    public void testSawedOff(){
+        Shotgun shotgun = new Shotgun(new Random());
+        shotgun.loadShotgun();
+
+        assert(!shotgun.getSawedOff());
+
+        shotgun.sawOff();
+        assert(shotgun.getSawedOff());
+
+        shotgun.shoot();
+        assert(!shotgun.getSawedOff());
+    }
 }
