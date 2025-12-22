@@ -56,5 +56,37 @@ public class ItemTest {
         phone.useItem(user, target, shotgun);
     }
 
+    @Test
+    public void testMagnifyingGlass(){
+        Item magnifyingGlass = new MagnifyingGlass();
+        assert(magnifyingGlass.getName().equals("Magnifying Glass"));
+        assertNotNull(magnifyingGlass);
+        shotgun.loadShotgun();
+        shotgun.printLoaded();
 
+        magnifyingGlass.useItem(user, target, shotgun);
+    }
+
+    @Test
+    public void testBeer(){
+        Item beer = new Beer();
+        assert(beer.getName().equals("Beer"));
+        assertNotNull(beer);
+        shotgun.loadShotgun();
+
+        shotgun.printLoaded();
+        beer.useItem(user, target, shotgun);
+        shotgun.printLoaded();
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+        beer.useItem(user, target, shotgun);
+    }
 }

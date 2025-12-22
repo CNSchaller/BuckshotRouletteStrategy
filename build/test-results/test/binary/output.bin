@@ -1,16 +1,25 @@
-Amount Loaded:  5
-Live Shells:  1
-Blank Shells:  4
-Shell 0: false
+Amount Loaded:  4
+Live Shells:  3
+Blank Shells:  1
+Shell 0: true
+Shell 1: true
+Shell 2: false
+Shell 3: true
+Shell was live.
+Amount Loaded:  3
+Live Shells:  3
+Blank Shells:  1
+Shell 0: true
 Shell 1: false
 Shell 2: true
-Shell 3: false
-Shell 4: false
-4 shell is blank.
-3 shell is blank.
-1 shell is live.
-1 shell is blank.
-1 shell is blank.
-No shells in gun.
-No shells in gun.
-No shells in gun.
+Shell was live.
+Shell was blank.
+Shell was live.
+No shell loaded.
+No shell loaded.
+No shell loaded.
+No shell loaded.
+No shell loaded.
+No shell loaded.
+No shell loaded.
+No shell loaded.

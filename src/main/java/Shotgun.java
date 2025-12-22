@@ -48,7 +48,8 @@ public class Shotgun {
     }
 
     public void updateAmountLoaded() {
-        this.amountLoaded = liveShells + blankShells;
+        //this.amountLoaded = liveShells + blankShells;
+        this.amountLoaded = getLoaded().size();
     }
 
     public void loadShotgun() {
@@ -93,6 +94,7 @@ public class Shotgun {
     }
 
     public void printLoaded(){
+        updateAmountLoaded();
         System.out.println("Amount Loaded:  " + amountLoaded);
         System.out.println("Live Shells:  " + liveShells);
         System.out.println("Blank Shells:  " + blankShells);
