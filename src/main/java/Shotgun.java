@@ -47,6 +47,10 @@ public class Shotgun {
         this.blankShells = blankShells;
     }
 
+    public void setLoaded(List<Boolean> loaded) {
+        this.loaded = loaded;
+    }
+
     public void updateAmountLoaded() {
         //this.amountLoaded = liveShells + blankShells;
         this.amountLoaded = getLoaded().size();
@@ -84,8 +88,8 @@ public class Shotgun {
     }
 
     public Boolean shoot(){
-        this.sawedOff = false;
         if(getLoaded().size() > 0) {
+            this.sawedOff = false;
             Boolean shot = getLoaded().get(0);
             getLoaded().remove(0);
             return shot;

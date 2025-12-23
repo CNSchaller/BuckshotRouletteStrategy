@@ -8,6 +8,6 @@ public abstract class Item {
         return name;
     }
 
-    public abstract void useItem(Player user, Player target, Shotgun shotgun);
+    public abstract boolean useItem(Player user, Player target, Shotgun shotgun);
 }
 

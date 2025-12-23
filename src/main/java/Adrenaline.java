@@ -8,7 +8,7 @@ public class Adrenaline extends Item{ //for now, it will randomly choose an item
     }
 
     @Override
-    public void useItem(Player user, Player target, Shotgun shotgun) {
-        return; //return to implement this
+    public boolean useItem(Player user, Player target, Shotgun shotgun) {
+        return false; //return to implement this
     }
 }

@@ -4,11 +4,13 @@ public class Handcuffs extends Item{
     }
 
     @Override
-    public void useItem(Player user, Player target, Shotgun shotgun){
+    public boolean useItem(Player user, Player target, Shotgun shotgun){
         if(target != null){
             target.handcuff();
+            return true;
         }else{
             System.out.println("No target found.");
+            return false;
         }
     }
 }

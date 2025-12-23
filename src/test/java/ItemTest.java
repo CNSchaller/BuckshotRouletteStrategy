@@ -13,8 +13,8 @@ public class ItemTest {
 
     @BeforeEach
     public void setup(){
-        user = new Player();
-        target = new Player();
+        user = new Player("user");
+        target = new Player("target");
         shotgun = new Shotgun(random);
     }
 
@@ -25,9 +25,9 @@ public class ItemTest {
         assertNotNull(user);
         shotgun.loadShotgun();
 
-        assert(user.getHealth() == 4);
+        assert(user.getHealth() == 3);
         cig.useItem(user, target, shotgun);
-        assert(user.getHealth() == 5);
+        assert(user.getHealth() == 4);
     }
 
     @Test
@@ -87,7 +87,10 @@ public class ItemTest {
         beer.useItem(user, target, shotgun);
         beer.useItem(user, target, shotgun);
         beer.useItem(user, target, shotgun);
-        beer.useItem(user, target, shotgun);
+        assert(!beer.useItem(user, target, shotgun));
+
+        Shotgun shotgun2 = new Shotgun(random);
+        assert(!beer.useItem(user, target, shotgun2));
     }
 
     @Test
@@ -96,10 +99,10 @@ public class ItemTest {
         assert(handSaw.getName().equals("Hand Saw"));
         assertNotNull(handSaw);
 
-        assert(shotgun.getSawedOff() == false);
+        assert(!shotgun.getSawedOff());
         handSaw.useItem(user, target, shotgun);
 
-        assert(shotgun.getSawedOff() == true);
+        assert(shotgun.getSawedOff());
     }
 
     @Test

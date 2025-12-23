@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -111,5 +114,17 @@ public class ShotgunTest {
 
         shotgun.shoot();
         assert(!shotgun.getSawedOff());
+    }
+
+    @Test
+    public void testRiggedShotgun(){
+        Shotgun shotgun = new Shotgun(new Random());
+        List<Boolean> rig = new ArrayList<>(Arrays.asList(false, true));
+        shotgun.setLoaded(rig);
+
+        assert(shotgun.getLoaded().size() == rig.size());
+        //shotgun.printLoaded();
+        assert(!shotgun.shoot());
+        assert(shotgun.shoot());
     }
 }

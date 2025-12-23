@@ -4,11 +4,13 @@ public class HandSaw extends Item{
     }
 
     @Override
-    public void useItem(Player user, Player target, Shotgun shotgun){
+    public boolean useItem(Player user, Player target, Shotgun shotgun){
         if(shotgun != null){
             shotgun.sawOff();
+            return true;
         }else{
             System.out.println("No shotgun found");
+            return false;
         }
     }
 }
