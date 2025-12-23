@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -71,12 +70,17 @@ public class PlayerTest {
         Player user = new Player("user");
         Player target = new Player("target");
         Shotgun shotgun = new Shotgun(new Random());
+        List<Boolean> rig = new ArrayList<>(Arrays.asList(false, false, true, true));
+        shotgun.setLoaded(rig);
 
-        shotgun.loadShotgun();
-        shotgun.printLoaded();
-
-        target.printLives();
         user.shootSomeone(target, shotgun);
-        target.printLives();
+        assert(target.getHealth() == 3);
+        user.shootSomeone(user, shotgun);
+        assert(user.getHealth() == 3);
+
+        user.shootSomeone(target, shotgun);
+        assert(target.getHealth() == 2);
+        user.shootSomeone(user, shotgun);
+        assert(user.getHealth() == 2);
     }
 }
