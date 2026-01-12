@@ -10,6 +10,7 @@ public class Game {
     final Random rand; //random integer value
     private static Game instance;
     private int currentTurn;
+    private ItemFactory itemFactory = new ItemFactory();
 
     private Game(){
         this.roundCount = 0;
@@ -32,6 +33,10 @@ public class Game {
 
     public int getCurrentTurn(){
         return this.currentTurn;
+    }
+
+    public ItemFactory getItemFactory(){
+        return this.itemFactory;
     }
 
     public List<Player> getPlayers(){
@@ -60,6 +65,10 @@ public class Game {
 
     public Shotgun getShotgun(){
         return this.shotgun;
+    }
+
+    public void giveItems(int numOfItems){
+
     }
 
     public void printStats(){

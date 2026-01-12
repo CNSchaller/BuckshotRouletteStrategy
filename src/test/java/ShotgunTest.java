@@ -28,6 +28,8 @@ public class ShotgunTest {
 
         assert(shotgun.getBlankShells() == 3);
         assert(shotgun.getLiveShells() == 2);
+        //System.out.println(shotgun.getLoaded().size());
+        //System.out.println(shotgun.getAmountLoaded());
         assert(shotgun.getAmountLoaded() == 5);
     }
 

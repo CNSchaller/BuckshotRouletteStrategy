@@ -52,8 +52,8 @@ public class Shotgun {
     }
 
     public void updateAmountLoaded() {
-        //this.amountLoaded = liveShells + blankShells;
-        this.amountLoaded = getLoaded().size();
+        this.amountLoaded = liveShells + blankShells;
+        //this.amountLoaded = getLoaded().size();
     }
 
     public void loadShotgun() {
@@ -92,6 +92,12 @@ public class Shotgun {
             this.sawedOff = false;
             Boolean shot = getLoaded().get(0);
             getLoaded().remove(0);
+            if(shot){ //if shot is live
+                this.liveShells--;
+            }else{
+                this.blankShells--;
+            }
+            updateAmountLoaded();
             return shot;
         }
         else return null;

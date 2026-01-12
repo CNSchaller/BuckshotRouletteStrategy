@@ -51,6 +51,8 @@ class GameTest {
 
     @Test
     void testNewGame(){
+        assertNotNull(Game.getInstance().getItemFactory());
+
         Game.getInstance().newGame();
         assert(Game.getInstance().getRoundCount() == 0);
         assert(Game.getInstance().getCurrentTurn() == 0);

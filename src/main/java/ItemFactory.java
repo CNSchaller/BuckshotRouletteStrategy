@@ -1,18 +1,18 @@
 public class ItemFactory {
-    public static Item create(String type) {
-        if(type.equalsIgnoreCase("beer")) {
+    public static Item create(ItemType type) {
+        if(type == ItemType.BEER) {
             return new Beer();
-        }else if(type.equalsIgnoreCase("cigarette")) {
+        }else if(type == ItemType.CIGARETTE) {
             return new Cigarette();
-        }else if(type.equalsIgnoreCase("handcuffs")) {
+        }else if(type == ItemType.HANDCUFFS) {
             return new Handcuffs();
-        }else if(type.equalsIgnoreCase("handsaw")) {
+        }else if(type == ItemType.HANDSAW) {
             return new HandSaw();
-        }else if(type.equalsIgnoreCase("magnifying glass")) {
+        }else if(type == ItemType.MAGNIFYINGGLASS) {
             return new MagnifyingGlass();
-        }else if(type.equalsIgnoreCase("phone")) {
+        }else if(type == ItemType.PHONE) {
             return new Phone();
-        }else if(type.equalsIgnoreCase("adrenaline")) {
+        }else if(type == ItemType.ADRENALINE) {
             return new Adrenaline();
         }
         return null;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ItemTypeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-01-12T21:51:44.751Z" hostname="Calvins-MacBook-Air-2.local" time="0.005">
+  <properties/>
+  <testcase name="ItemTypeTest()" classname="ItemTypeTest" time="0.005"/>
+  <system-out><![CDATA[ADRENALINE
+PHONE
+CIGARETTE
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
