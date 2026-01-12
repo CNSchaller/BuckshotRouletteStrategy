@@ -3,17 +3,16 @@ import java.util.List;
 
 public class Player {
     private final int INTIAL_HEALTH = 3;
-    private final int INITIAL_HANDCUFF_VALUE = 0;
     private final int MAX_ITEMS = 8;
     private int health;
-    private int handcuffed;
+    private boolean handcuffed;
     private String name;
     private List<Item> items = new ArrayList<>();
     private boolean turnRehash = false;
 
     public Player(String name) {
         this.health = INTIAL_HEALTH;
-        this.handcuffed = INITIAL_HANDCUFF_VALUE;
+        this.handcuffed = false;
         this.name = name;
     }
 
@@ -29,7 +28,7 @@ public class Player {
         return this.items;
     }
 
-    public int getHandcuffed(){
+    public boolean getHandcuffed(){
         return this.handcuffed;
     }
 
@@ -39,6 +38,10 @@ public class Player {
 
     public void loseHealth(int amount_lost){
         this.health -= amount_lost;
+    }
+
+    public void setHealth(int amount_health){
+        this.health = amount_health;
     }
 
     public void addItem(Item item){
@@ -56,7 +59,11 @@ public class Player {
     }
 
     public void handcuff(){
-        this.handcuffed++;
+        this.handcuffed = true;
+    }
+
+    public void unhandcuff(){
+        this.handcuffed = false;
     }
 
     public void printItems(){
@@ -71,7 +78,7 @@ public class Player {
     }
 
     public void printLives(){
-        System.out.println("----------Lives----------");
+        //System.out.println("----------Lives----------");
         for(int i = 0; i < health; i++){
             System.out.print("\u2764\uFE0F");
         }

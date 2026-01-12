@@ -1,5 +1,6 @@
-
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -43,10 +44,43 @@ class GameTest {
     }
 
     @Test
+    void testGetPlayers(){
+        List<Player> players = Game.getInstance().getPlayers();
+        assertNotNull(players);
+    }
+
+    @Test
+    void testNewGame(){
+        Game.getInstance().newGame();
+        assert(Game.getInstance().getRoundCount() == 0);
+        assert(Game.getInstance().getCurrentTurn() == 0);
+        assert(Game.getInstance().getPlayers().size() == 2);
+        assert(Game.getInstance().getPlayers().get(0).getName().equals("Player 1"));
+        assert(Game.getInstance().getPlayers().get(1).getName().equals("Player 2"));
+        assert(Game.getInstance().getPlayers().get(0).getHealth() == 3);
+        assert(Game.getInstance().getPlayers().get(1).getHealth() == 3);
+
+        assert(Game.getInstance().getCurrentPlayer().getName().equals("Player 1"));
+        assert(Game.getInstance().getNextPlayer().getName().equals("Player 2"));
+
+        Game.getInstance().advanceTurn();
+
+        assert(Game.getInstance().getCurrentPlayer().getName().equals("Player 2"));
+        assert(Game.getInstance().getNextPlayer().getName().equals("Player 1"));
+
+        Game.getInstance().getNextPlayer().handcuff();
+        Game.getInstance().advanceTurn();
+
+        assert(Game.getInstance().getCurrentPlayer().getName().equals("Player 2"));
+        assert(Game.getInstance().getNextPlayer().getName().equals("Player 1"));
+    }
+
+    @Test
     void testNewRound(){
-        int old = Game.getInstance().getRoundCount();
+        Game.getInstance().newGame();
+        assert(Game.getInstance().getRoundCount() == 0);
         Game.getInstance().newRound();
-        assert(old !=  Game.getInstance().getRoundCount());
-        assert(Game.getInstance().getRoundCount() == old+1);
+        assert(Game.getInstance().getRoundCount() == 1);
+        assert(!Game.getInstance().getShotgun().getLoaded().isEmpty());
     }
 }

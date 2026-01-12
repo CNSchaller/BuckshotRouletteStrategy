@@ -13,7 +13,7 @@ public class PlayerTest {
         assert(Objects.equals(user.getName(), "user"));
         assert(user.getHealth() == 3);
         assert(user.getItems().isEmpty());
-        assert(user.getHandcuffed() == 0);
+        assert(!user.getHandcuffed());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class PlayerTest {
 
         user.heal(1);
         assert(user.getHealth() == 4);
-        assert(target.getHandcuffed() == 0);
+        assert(!target.getHandcuffed());
 
         user.loseHealth(2);
         assert(user.getHealth() == 2);
@@ -44,7 +44,7 @@ public class PlayerTest {
         user.useItem(0, target, shotgun);
         assert(user.getItems().size() == 1);
 
-        assert(target.getHandcuffed() == 1);
+        assert(target.getHandcuffed());
     }
 
     @Test

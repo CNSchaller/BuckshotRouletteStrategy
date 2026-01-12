@@ -111,10 +111,10 @@ public class ItemTest {
         assertNotNull(handcuffs);
         assert(handcuffs.getName().equals("Handcuffs"));
 
-        assert(target.getHandcuffed() == 0);
+        assert(!target.getHandcuffed());
 
         handcuffs.useItem(user, target, shotgun);
 
-        assert(target.getHandcuffed() == 1);
+        assert(target.getHandcuffed());
     }
 }
